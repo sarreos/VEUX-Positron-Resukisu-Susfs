@@ -291,7 +291,7 @@ static int filldir(struct dir_context *ctx, const char *name, int namlen,
 	int prev_reclen;
 
 #ifdef CONFIG_KSU_SUSFS_SUS_PATH
-	struct inode *inode;
+	struct inode *inode __maybe_unused;
 #endif
 	buf->error = verify_dirent_name(name, namlen);
 	if (unlikely(buf->error))
