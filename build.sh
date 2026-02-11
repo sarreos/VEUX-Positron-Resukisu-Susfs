@@ -8,6 +8,7 @@ bash backport_selinux_patches.sh
 bash susfs_inline_hook_patches.sh
 DEFCONFIG="veux_defconfig"
 make O=out ARCH=arm64 $DEFCONFIG
+gzip -c out/.config > kernel/config_data.gz
 make -j$(nproc --all) O=out \
     ARCH=arm64 \
     LLVM=1 \
@@ -15,3 +16,4 @@ make -j$(nproc --all) O=out \
     CLANG_TRIPLE=aarch64-linux-gnu- \
     CROSS_COMPILE=aarch64-linux-gnu- \
     CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
+
