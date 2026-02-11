@@ -6,7 +6,7 @@ curl -LSs "https://raw.githubusercontent.com/ReSukiSU/ReSukiSU/main/kernel/setup
 bash backport_patches.sh
 bash backport_selinux_patches.sh
 bash susfs_inline_hook_patches.sh
-DEFCONFIG = "veux_defconfig"
+DEFCONFIG="veux_defconfig"
 make O=out ARCH=arm64 $DEFCONFIG
 make -j$(nproc --all) O=out \
     ARCH=arm64 \
@@ -15,4 +15,3 @@ make -j$(nproc --all) O=out \
     CLANG_TRIPLE=aarch64-linux-gnu- \
     CROSS_COMPILE=aarch64-linux-gnu- \
     CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
-    KCFLAGS="-O3 -march=armv8.2-a+crypto+dotprod -mtune=generic -mllvm -polly -mllvm -enable-ml-inliner=release" \
