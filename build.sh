@@ -48,12 +48,12 @@ print("===========================")
     KCFLAGS="-O3 -march=armv8.2-a+crypto+dotprod -mtune=generic -mllvm -polly -mllvm -enable-ml-inliner=release" \
     2>&1 | tee log.txt
 # 8. Langkah 3: Otomatis Kirim ke Google Drive jika Berhasil
-if os.path.exists("out/arch/arm64/boot/Image"):
+if os.path.exists("out/arch/arm64/boot/Image.gz-dtb"):
     print("====================================")
     print("= BUILD SUCCESS! COPYING TO DRIVE =")
     print("====================================")
     # Copy file Image dan Log ke Google Drive
-    !cp out/arch/arm64/boot/Image "{DRIVE_PATH}/Image-$(date +%Y%m%d-%H%M)"
+    !cp out/arch/arm64/boot/Image.gz-dtb "{DRIVE_PATH}/Image.gz-dtb-$(date +%Y%m%d-%H%M)"
     !cp log.txt "{DRIVE_PATH}/log-$(date +%Y%m%d-%H%M).txt"
     print(f"Selesai! File disimpan di: {DRIVE_PATH}")
 else:
