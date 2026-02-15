@@ -4743,7 +4743,9 @@ static int _sde_hardware_pre_caps(struct sde_mdss_cfg *sde_cfg, uint32_t hw_rev)
 		sde_cfg->sui_ns_allowed = true;
 		sde_cfg->sui_misr_supported = true;
 		sde_cfg->sui_block_xin_mask = 0xC61;
-		sde_cfg->has_hdr = false;
+		sde_cfg->has_hdr = true;
+
+		sde_cfg->has_hdr_plus = true;
 		sde_cfg->has_sui_blendstage = true;
 		sde_cfg->vbif_disable_inner_outer_shareable = true;
 	} else if (IS_BENGAL_TARGET(hw_rev)) {
@@ -4757,7 +4759,9 @@ static int _sde_hardware_pre_caps(struct sde_mdss_cfg *sde_cfg, uint32_t hw_rev)
 		sde_cfg->sui_ns_allowed = true;
 		sde_cfg->sui_misr_supported = true;
 		sde_cfg->sui_block_xin_mask = 0xC01;
-		sde_cfg->has_hdr = false;
+		sde_cfg->has_hdr = true;
+
+		sde_cfg->has_hdr_plus = true;
 		sde_cfg->has_sui_blendstage = true;
 		sde_cfg->vbif_disable_inner_outer_shareable = true;
 	} else if (IS_LAGOON_TARGET(hw_rev)) {
@@ -4786,7 +4790,9 @@ static int _sde_hardware_pre_caps(struct sde_mdss_cfg *sde_cfg, uint32_t hw_rev)
 		sde_cfg->sui_ns_allowed = true;
 		sde_cfg->sui_misr_supported = true;
 		sde_cfg->sui_block_xin_mask = 0x1;
-		sde_cfg->has_hdr = false;
+		sde_cfg->has_hdr = true;
+
+		sde_cfg->has_hdr_plus = true;
 		sde_cfg->has_sui_blendstage = true;
 	} else if (IS_MONACO_TARGET(hw_rev)) {
 		sde_cfg->has_cwb_support = false;
@@ -4799,7 +4805,9 @@ static int _sde_hardware_pre_caps(struct sde_mdss_cfg *sde_cfg, uint32_t hw_rev)
 		sde_cfg->sui_ns_allowed = true;
 		sde_cfg->sui_misr_supported = true;
 		sde_cfg->sui_block_xin_mask = 0x1;
-		sde_cfg->has_hdr = false;
+		sde_cfg->has_hdr = true;
+
+		sde_cfg->has_hdr_plus = true;
 		sde_cfg->has_sui_blendstage = true;
 	} else if (IS_LAHAINA_TARGET(hw_rev)) {
 		sde_cfg->has_demura = true;
@@ -4842,7 +4850,8 @@ static int _sde_hardware_pre_caps(struct sde_mdss_cfg *sde_cfg, uint32_t hw_rev)
 		sde_cfg->sui_ns_allowed = true;
 		sde_cfg->sui_misr_supported = true;
 		sde_cfg->sui_block_xin_mask = 0xC01;
-		sde_cfg->has_hdr = false;
+		sde_cfg->has_hdr = true;
+		sde_cfg->has_hdr_plus = true;
 		sde_cfg->has_sui_blendstage = true;
 		sde_cfg->vbif_disable_inner_outer_shareable = true;
 		sde_cfg->mdss_hw_block_size = 0x158;
